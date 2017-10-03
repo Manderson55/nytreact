@@ -52,7 +52,7 @@ var helpers = {
 
 
 // We export the helper function 
-module.exports = helper;
+module.exports = Helper;
 
 
 // Exporting an object with methods for retrieving and posting data to our API
