@@ -10,7 +10,7 @@ var Results = require('./Children/Results');
 var Saved = require('./Children/Saved');
 
 // Helper Function
-var helpers = require('./utils/helpers.js');
+var helpers = require('./../utils/helpers.js');
 
 
 // This is the main component. 
@@ -28,12 +28,14 @@ var Main = createReactClass({
 	},	
 
 	// We use this function to allow children to update the parent with searchTerms.
-	setTerm: function(topic, startYear, endYear){
+	setSearchParams: function(topic, startYear, endYear){
 		this.setState({
 			topic: topic,
 			startYear: startYear,
 			endYear: endYear
 		})
+		alert("this is the topic: " + this.state.topic);
+
 	},
 
 	saveArticle: function(title, date, url){
@@ -65,7 +67,7 @@ var Main = createReactClass({
 
 	// If the component updates we'll run this code
 	componentDidUpdate: function(prevProps, prevState){
-
+console.log("hi");
 		if(prevState.topic != this.state.topic){
 			console.log("UPDATED");
 
@@ -80,6 +82,7 @@ var Main = createReactClass({
 					}
 				}.bind(this))
 		}
+		console.log(prevState.topic, this.state.topic)
 	},
 
 	componentDidMount: function(){
@@ -106,7 +109,7 @@ var Main = createReactClass({
 				</div>
 
 				<div className="row">
-					<Search setTerm={this.setTerm}/>
+					<Search setSearchParams={this.setSearchParams}/>
 				</div>
 
 				<div className="row">			

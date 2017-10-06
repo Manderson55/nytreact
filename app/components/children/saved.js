@@ -41,12 +41,12 @@ var Saved = React.createClass({
  
   	render: function() {
    		return (
-   			    <div className="panel panel-warning">
+   			    <div className="panel panel-danger">
         		  		<div className="panel-heading">
-          						<h3>Saved Articles</h3>
-        				</div>
-        				<div className="panel-body">
-          					 I will put the saved articles here
+                      <h3 className="panel-title text-center">Saved Articles</h3>
+                  </div>
+        				  <div className="panel-body">
+          					 {}
         				</div>
      			</div>
     	);

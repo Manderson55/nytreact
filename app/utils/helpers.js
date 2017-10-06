@@ -5,12 +5,12 @@ var axios = require("axios");
 var nytAPI = "e82dedb2e4484274a1c85c25109204d3";
 
 
-var helpers = {
+var Helpers = {
 
 	runQuery: function(topic, startYear, endYear){
 
 		var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + nytAPI + "&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
-
+		console.log(queryURL)
 		return axios.get(queryURL)
 			.then(function(response){
 
@@ -32,6 +32,7 @@ var helpers = {
 				}
 
 				return newResults;
+				console.log(newResults);
 		})
 
 	},
@@ -52,19 +53,19 @@ var helpers = {
 
 
 // We export the helper function 
-module.exports = Helper;
+module.exports = Helpers;
 
 
-// Exporting an object with methods for retrieving and posting data to our API
-module.exports = {
-  // Returns a promise object we can .then() off inside our Parent component
-  getClicks: function() {
-    return axios.get("/api");
-  },
-  // Also returns a promise object we can .then() off inside our Parent component
-  // This method takes in an argument for what to post to the database
-  saveClicks: function(clickData) {
-    return axios.post("/api", clickData);
-  }
-};
+// // Exporting an object with methods for retrieving and posting data to our API
+// module.exports = {
+//   // Returns a promise object we can .then() off inside our Parent component
+//   getClicks: function() {
+//     return axios.get("/api");
+//   },
+//   // Also returns a promise object we can .then() off inside our Parent component
+//   // This method takes in an argument for what to post to the database
+//   saveClicks: function(clickData) {
+//     return axios.post("/api", clickData);
+//   }
+// };
 
