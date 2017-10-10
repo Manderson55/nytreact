@@ -3,7 +3,6 @@ var React = require("react");
 
 // Helper Function
 var helpers = require("./../../utils/helpers");
-
 // Create the Search component
 //class Search extends React.Component{
 var Search = React.createClass({  // WHich one to use????????
@@ -35,18 +34,30 @@ var Search = React.createClass({  // WHich one to use????????
    		newState[event.target.id] = event.target.value;
    		console.log(event.target.value);
     	this.setState(newState);
+
   	},
 
-  	handleSubmit: function(){
-  		console.log("inside handleSubmit, just clicked submit");
+  	handleSubmit: function(event){
+  		console.log("inside handleSubmit, just clicked submit", helpers);
   	    // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
+console.log("Inside search.js : ", helpers)
     	// clicking the button
     	event.preventDefault();	
 		// Set the parent to have the search term
-		this.props.setSearchParams(this.state.topic, this.state.startYear, this.state.endYear);
+		// this.props.setSearchParams(this.state.topic, this.state.startYear, this.state.endYear);
 		console.log(this.state.topic);
 		console.log(this.state.startYear);
-		console.log(this.state.endYear);		
+		console.log(this.state.endYear);
+		helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear)
+		.then(function(data){
+			console.log(data);
+			if (data != this.state.results)
+			{
+				this.setState({
+					results: data
+				})
+			}
+		}.bind(this))		
     	// Clearing the input field after submitting
     	this.setState({ topic: "", 
     			startYear: "", 

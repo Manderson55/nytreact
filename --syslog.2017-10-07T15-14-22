@@ -1,0 +1,16 @@
+2017-10-07T09:12:25.291-0600 I CONTROL  [initandlisten] MongoDB starting : pid=88791 port=27017 dbpath=/data/db 64-bit host=MacBook-Pro-2.local
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] db version v3.4.7
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] git version: cf38c1b8a0a8dca4a11737581beafef4fe120bcd
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2l  25 May 2017
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] allocator: system
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] modules: none
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] build environment:
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten]     distarch: x86_64
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] options: { processManagement: { fork: true }, systemLog: { destination: "file", path: "--syslog", verbosity: 1 } }
+2017-10-07T09:12:25.292-0600 D -        [initandlisten] User Assertion: 98:Unable to lock file: /data/db/mongod.lock Resource temporarily unavailable. Is a mongod instance already running? src/mongo/db/service_context_d.cpp 98
+2017-10-07T09:12:25.292-0600 I STORAGE  [initandlisten] exception in initAndListen: 98 Unable to lock file: /data/db/mongod.lock Resource temporarily unavailable. Is a mongod instance already running?, terminating
+2017-10-07T09:12:25.292-0600 I NETWORK  [initandlisten] shutdown: going to close listening sockets...
+2017-10-07T09:12:25.292-0600 I NETWORK  [initandlisten] shutdown: going to flush diaglog...
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] now exiting
+2017-10-07T09:12:25.292-0600 I CONTROL  [initandlisten] shutting down with code:100

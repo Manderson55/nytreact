@@ -34,7 +34,7 @@ var Main = createReactClass({
 			startYear: startYear,
 			endYear: endYear
 		})
-		alert("this is the topic: " + this.state.topic);
+		console.log("this is the topic: " + this.state.topic);
 
 	},
 
@@ -67,20 +67,21 @@ var Main = createReactClass({
 
 	// If the component updates we'll run this code
 	componentDidUpdate: function(prevProps, prevState){
-console.log("hi");
+	console.log("hi");
+	console.log(prevState.topic, this.state.topic);
 		if(prevState.topic != this.state.topic){
 			console.log("UPDATED");
 
-			helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear)
-				.then(function(data){
-					console.log(data);
-					if (data != this.state.results)
-					{
-						this.setState({
-							results: data
-						})
-					}
-				}.bind(this))
+			// helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear)
+			// 	.then(function(data){
+			// 		console.log(data);
+			// 		if (data != this.state.results)
+			// 		{
+			// 			this.setState({
+			// 				results: data
+			// 			})
+			// 		}
+			// 	}.bind(this))
 		}
 		console.log(prevState.topic, this.state.topic)
 	},

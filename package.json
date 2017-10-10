@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w & nodemon server.js"
+    "prestart": "mongod --fork --logpath --syslog --verbose",
+    "start": "webpack -w & nodemon server.js",
+    "start:all": "webpack -w & nodemon server.js"
   },
   "repository": {
     "type": "git",
